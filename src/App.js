@@ -1,14 +1,14 @@
-import React, { Component } from "react";
 import axios from "axios";
+import React, { Component } from "react";
 import "./App.css";
-import Countries from "./Countries";
+import CountryList from "./CountryList/CountryList";
 
 class App extends Component {
   constructor() {
     super();
 
     this.state = {
-      countries: [],
+      countries: []
     };
   }
 
@@ -21,7 +21,7 @@ class App extends Component {
     return (
       <div className="App">
         <h1>Countries of the World</h1>
-        <Countries countries={this.state.countries} />
+        <CountryList countriesData={this.state.countries} />
       </div>
     );
   }
