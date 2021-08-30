@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import axios from "axios";
 import "./App.css";
-import Countries from "./Countries";
+import Country from "./Country";
 
-class App extends Component {
+class Countries extends Component {
   constructor() {
     super();
 
@@ -18,13 +18,11 @@ class App extends Component {
   }
 
   render() {
-    return (
-      <div className="App">
-        <h1>Countries of the World</h1>
-        <Countries countries={this.state.countries} />
-      </div>
-    );
+    let countries = this.props.countries.map((country) => {
+      return <li><Country name = {country.name} /></li>
+    })
+    return <ul>{countries}</ul>;
   }
 }
 
-export default App;
+export default Countries;
