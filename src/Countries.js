@@ -1,20 +1,10 @@
 import React, { Component } from "react";
-import axios from "axios";
 import "./App.css";
 import Country from "./Country";
 
 class Countries extends Component {
-  constructor() {
+  constructor(props) {
     super();
-
-    this.state = {
-      countries: [],
-    };
-  }
-
-  async componentDidMount() {
-    let result = await axios.get("https://restcountries.eu/rest/v2/all");
-    this.setState({ countries: result.data });
   }
 
   render() {
